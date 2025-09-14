@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Create an Ubuntu EC2 instance in ap-south-1
+
+Parameters:
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: asadkeypair
+    Description: Name of an existing EC2 KeyPair
+
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.small
+      KeyName: !Ref KeyName
+      ImageId: ami-02d26659fd82cf299 # Ubuntu 22.04 LTS (HVM), SSD GP2, ap-south-1
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: 0
+          SubnetId: subnet-08b40126eb06da05d
+          GroupSet:
+            - sg-01ce11265f53ef206
+      Tags:
+        - Key: Name
+          Value: Ubuntu-EC2-CFT
+
+Outputs:
+  InstanceId:
+    Description: Instance ID of the created EC2 instance
+    Value: !Ref EC2Instance
+  PublicIP:
+    Description: Public IP of the created EC2 instance
+    Value: !GetAtt EC2Instance.PublicIp
