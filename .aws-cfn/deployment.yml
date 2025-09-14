@@ -1,0 +1,8 @@
+template-file-path: ec2.yml.txt
+parameters:
+  VpcId: vpc-06ece205fc009f292
+  SubnetId: subnet-08b40126eb06da05d
+  SecurityGroupId: sg-01ce11265f53ef206
+  KeyName: asadkeypair
+tags:
+  Project: aws-git-sync
