@@ -1,0 +1,123 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create 10 EBS Volumes of 1 GB each in a single AZ
+
+Parameters:
+  AvailabilityZone:
+    Type: String
+    Default: ap-south-1a
+    Description: Availability Zone to create the volumes in
+  VpcId:
+    Type: String
+    Default: vpc-06ece205fc009f292
+    Description: VPC ID to tag volumes with
+
+Resources:
+  Volume1:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume1
+        - Key: VPC
+          Value: !Ref VpcId
+
+  Volume2:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume2
+        - Key: VPC
+          Value: !Ref VpcId
+
+  Volume3:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume3
+        - Key: VPC
+          Value: !Ref VpcId
+
+  Volume4:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume4
+        - Key: VPC
+          Value: !Ref VpcId
+
+  Volume5:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume5
+        - Key: VPC
+          Value: !Ref VpcId
+
+  Volume6:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume6
+        - Key: VPC
+          Value: !Ref VpcId
+
+  Volume7:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume7
+        - Key: VPC
+          Value: !Ref VpcId
+
+  Volume8:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume8
+        - Key: VPC
+          Value: !Ref VpcId
+
+  Volume9:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume9
+        - Key: VPC
+          Value: !Ref VpcId
+
+  Volume10:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: !Ref AvailabilityZone
+      Size: 1
+      Tags:
+        - Key: Name
+          Value: Volume10
+        - Key: VPC
+          Value: !Ref VpcId
